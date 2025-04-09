@@ -1,27 +1,26 @@
-
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import './App.css';
-import HeroSection from './components/HeroSection';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";  // Fixed the import
+import SignUp from "./components/SignUp";  // Ensure the path is correct based on your project structure
+import SignIn from "./components/SignIn";  // Ensure the path is correct based on your project structure
+import Home from "./components/Home";  // Ensure the path is correct based on your project structure
+import "./app.css";  // Your custom CSS for styles
 
 const App = () => {
   return (
     <Router>
-      <Navbar />
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<h1><HeroSection /></h1>} />
-          <Route path="/Flight" element={<h1>Flight</h1>} />
-          <Route path="/developers" element={<h1>Developers</h1>} />
-          <Route path="/documentation" element={<h1>Documentation</h1>} />
-          <Route path="/login" element={<h1>Login</h1>} />
+      <Routes>
+        {/* Route for Home */}
+        <Route path="/" element={<Home />} />
 
+        {/* Route for SignUp */}
+        <Route path="/signup" element={<SignUp />} />
 
-        </Routes>
-      </div>
+        {/* Route for SignIn */}
+        <Route path="/login" element={<SignIn />} />
+      </Routes>
     </Router>
   );
 };
 
 export default App;
+
